@@ -1,0 +1,309 @@
+/**
+ * Reusable UI patterns following the design system.
+ */
+
+/* Containers */
+.container {
+  padding: 0 var(--screen-x);
+  width: 100%;
+}
+
+/* Header */
+.header {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+}
+
+.header__title {
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-align: center;
+  flex: 1;
+}
+
+.header__help {
+  width: 24px;
+  height: 24px;
+  border: 1px solid var(--divider-dark);
+  border-radius: 50%;
+  font-size: 12px;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  background-color: var(--bg-card);
+  border-radius: var(--r-md);
+  padding: var(--sp-md);
+  border: 1px solid var(--divider-dark);
+}
+
+.card--accent {
+  background-color: var(--accent);
+  color: var(--text-dark);
+  border: none;
+  box-shadow: var(--shadow-accent);
+}
+
+/* Stepper */
+.stepper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  padding: var(--sp-md) 0 var(--sp-xl);
+}
+
+.stepper::before {
+  content: '';
+  position: absolute;
+  top: calc(var(--sp-md) + var(--stepper-dot-size) / 2);
+  left: 0;
+  right: 0;
+  height: var(--stepper-line-h);
+  background: var(--stepper-inactive);
+  z-index: 1;
+}
+
+.stepper__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-xs);
+  z-index: 2;
+  flex: 1;
+}
+
+.stepper__dot {
+  width: var(--stepper-dot-size);
+  height: var(--stepper-dot-size);
+  border-radius: 50%;
+  background: var(--stepper-inactive);
+  transition: all 0.3s;
+}
+
+.stepper__label {
+  font-family: var(--f-mono);
+  font-size: 9px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.stepper__item--active .stepper__dot {
+  background: var(--stepper-active);
+  box-shadow: 0 0 8px var(--stepper-active);
+  transform: scale(1.2);
+}
+
+.stepper__item--active .stepper__label {
+  color: var(--stepper-active);
+  font-weight: 700;
+}
+
+.stepper__item--completed .stepper__dot {
+  background: var(--stepper-active);
+}
+
+/* Buttons */
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sp-md) var(--sp-lg);
+  border-radius: var(--r-pill);
+  font-family: var(--f-sans);
+  font-weight: 700;
+  transition: transform 0.2s, opacity 0.2s;
+  width: 100%;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btn--primary {
+  background-color: var(--accent);
+  color: var(--text-dark);
+  box-shadow: var(--shadow-accent);
+}
+
+.btn--secondary {
+  background-color: var(--bg-card2);
+  color: var(--text-primary);
+}
+
+/* Inputs */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-xs);
+}
+
+.input-label {
+  font-family: var(--f-mono);
+  font-size: 12px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.input-field {
+  background-color: var(--bg-card2);
+  border: 2px solid transparent;
+  border-radius: var(--r-sm);
+  padding: var(--sp-md);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+  transition: border-color 0.2s;
+}
+
+.input-field:focus {
+  border-color: var(--accent);
+}
+
+.input-field--error {
+  border-color: var(--up);
+}
+
+/* Badges */
+.badge {
+  display: inline-flex;
+  padding: var(--sp-xs) var(--sp-sm);
+  border-radius: var(--r-pill);
+  font-family: var(--f-mono);
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.badge--accent {
+  background-color: var(--accent-dim);
+  color: var(--accent);
+  border: 1px solid rgba(0, 0, 0, 0.1); /* 미세한 테두리 추가 */
+}
+
+/* 강조 카드 내의 배지 스타일 최적화 */
+.card--accent .badge--accent {
+  background-color: var(--on-accent-dim);
+  color: var(--on-accent-text);
+}
+
+.badge--warn {
+  background-color: rgba(255, 214, 0, 0.1);
+  color: var(--warn);
+}
+
+/* Typography Helpers */
+.text-mono { font-family: var(--f-mono); }
+.text-sans { font-family: var(--f-sans); }
+.text-bold { font-weight: 800; }
+.text-accent { color: var(--accent); }
+.text-secondary { color: var(--text-secondary); }
+
+/* Icons (Simplistic CSS Icons) */
+.icon-back {
+  color: var(--text-secondary);
+  font-size: 20px;
+}
+
+.icon-back::before {
+  content: '←';
+  margin-right: var(--sp-sm);
+}
+
+/* Comparison Table Component */
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.compare-table th {
+  text-align: left;
+  padding: var(--sp-sm) var(--sp-xs);
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--divider-dark);
+}
+
+.compare-table td {
+  padding: var(--sp-md) var(--sp-xs);
+  border-bottom: 1px solid var(--divider-dark);
+}
+
+.row--highlight {
+  background-color: var(--bg-card2);
+}
+
+.val--up { color: var(--up); }
+.val--down { color: var(--down); }
+.val--accent { color: var(--accent); font-weight: 700; }
+
+/* Flow Diagram Component */
+.flow-diagram {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--sp-md) 0;
+}
+
+.flow-box {
+  flex: 1;
+  background-color: var(--bg-card2);
+  padding: var(--sp-sm);
+  border-radius: var(--r-sm);
+  text-align: center;
+  font-size: 11px;
+}
+
+.flow-box--accent {
+  background-color: var(--accent-dim);
+  border: 1px solid var(--accent);
+}
+
+.flow-label {
+  display: block;
+  font-size: 8px;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+
+.flow-arrow {
+  padding: 0 var(--sp-xs);
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.edge-case-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-sm);
+}
+
+.edge-case-item {
+  display: flex;
+  gap: var(--sp-sm);
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--text-secondary);
+}

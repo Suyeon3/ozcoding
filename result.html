@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>C2CPriceHelper - 추천 전략</title>
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/components/navigation.css">
+  <link rel="stylesheet" href="css/components/data-display.css">
+  <link rel="stylesheet" href="css/components/forms.css">
+  <link rel="stylesheet" href="css/screens/result.css">
+</head>
+<body>
+  <div id="app">
+    <header class="header container">
+      <button class="header__back" onclick="location.href='index.html'"><span class="icon-back"></span></button>
+      <h1 class="header__title">추천 전략</h1>
+      <div style="width: 24px;"></div>
+    </header>
+
+    <div id="stepper-root"></div>
+
+    <main class="main container">
+      <div id="summary-chips" class="summary-bar">
+        <!-- Chips injected by JS -->
+      </div>
+
+      <div id="strategy-list" class="strategy-list">
+        <!-- Cards injected by JS -->
+      </div>
+
+      <div class="compare-toggle">
+        <button id="btn-toggle-compare" class="text-secondary">▼ 전략 비교 상세 보기</button>
+      </div>
+
+      <div id="comparison-root" class="comparison-root" style="display: none; margin-top: var(--sp-lg);">
+        <!-- Injected by comparison component -->
+      </div>
+    </main>
+  </div>
+
+  <script type="module" src="js/screens/result.js"></script>
+</body>
+</html>

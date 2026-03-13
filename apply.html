@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>C2CPriceHelper - 설정 완료</title>
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/components/navigation.css">
+  <link rel="stylesheet" href="css/components/data-display.css">
+  <link rel="stylesheet" href="css/components/forms.css">
+  <link rel="stylesheet" href="css/screens/apply.css">
+</head>
+<body>
+  <div id="app">
+    <header class="header container">
+      <button class="header__back" onclick="location.href='result.html'"><span class="icon-back"></span></button>
+      <h1 class="header__title">최종 확인</h1>
+      <div style="width: 24px;"></div>
+    </header>
+
+    <div id="stepper-root"></div>
+
+    <main class="main container">
+      <div id="hero-strategy" class="hero-card card card--accent">
+        <!-- Hero injected by JS -->
+      </div>
+
+      <section class="section">
+        <h2 class="section__title text-mono">Auto-fill Preview</h2>
+        <div class="apply-list">
+          <div class="apply-item apply-item--highlight">
+            <div class="apply-info">
+              <span class="apply-label text-mono">판매자 수수료율</span>
+              <span id="val-seller-fee" class="apply-value text-bold text-accent">0%</span>
+            </div>
+            <span class="badge badge--accent">AUTO-FILL ✓</span>
+          </div>
+
+          <div class="apply-item">
+            <div class="apply-info">
+              <span class="apply-label text-mono">판매가</span>
+              <span id="val-list-price" class="apply-value text-bold">0</span>
+            </div>
+            <span class="badge badge--accent">AUTO-FILL</span>
+          </div>
+
+          <div class="apply-item">
+            <div class="apply-info">
+              <span class="apply-label text-mono">구매자 수수료율</span>
+              <span id="val-buyer-fee" class="apply-value">0%</span>
+            </div>
+          </div>
+
+          <div class="div-line"></div>
+
+          <div class="apply-item apply-item--dim">
+            <div class="apply-info">
+              <span class="apply-label text-mono">구매자 최종가</span>
+              <span id="val-buyer-total" class="apply-value">0</span>
+            </div>
+          </div>
+
+          <div class="apply-item apply-item--dim">
+            <div class="apply-info">
+              <span class="apply-label text-mono">정산가 (실수령)</span>
+              <span id="val-net-price" class="apply-value">0</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer container">
+      <button id="cta-apply" class="btn btn--primary">이 가격으로 등록하기 →</button>
+      <button onclick="location.href='result.html'" class="btn btn--secondary" style="margin-top: 12px; background: none; border: 1px solid var(--divider-dark);">다시 선택하기</button>
+      <p class="footer-hint">등록 후 상품에 '가격 최적화 ✓' 뱃지가 표시됩니다</p>
+    </footer>
+  </div>
+
+  <script type="module" src="js/screens/apply.js"></script>
+</body>
+</html>

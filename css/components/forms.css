@@ -1,0 +1,66 @@
+/* Buttons */
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sp-md) var(--sp-lg);
+  border-radius: var(--r-pill);
+  font-family: var(--f-sans);
+  font-weight: 700;
+  transition: transform 0.2s, opacity 0.2s;
+  width: 100%;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btn--primary {
+  background-color: var(--accent);
+  color: var(--text-dark);
+  box-shadow: var(--shadow-accent);
+}
+
+.btn--secondary {
+  background-color: var(--bg-card2);
+  color: var(--text-primary);
+}
+
+/* Inputs */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-xs);
+}
+
+.input-label {
+  font-family: var(--f-mono);
+  font-size: 12px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.input-field {
+  background-color: var(--bg-card2);
+  border: 2px solid transparent;
+  border-radius: var(--r-sm);
+  padding: var(--sp-md);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+  transition: border-color 0.2s;
+}
+
+.input-field:focus {
+  border-color: var(--accent);
+}
+
+.input-field--error {
+  border-color: var(--up);
+}

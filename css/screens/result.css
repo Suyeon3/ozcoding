@@ -1,0 +1,142 @@
+/* Screen 2 specific styles */
+
+
+.summary-bar {
+  display: flex;
+  gap: var(--sp-sm);
+  overflow-x: auto;
+  padding: var(--sp-md) 0;
+  scrollbar-width: none;
+}
+
+.summary-bar::-webkit-scrollbar { display: none; }
+
+.chip {
+  background-color: var(--bg-card2);
+  padding: var(--sp-xs) var(--sp-md);
+  border-radius: var(--r-pill);
+  font-size: 11px;
+  white-space: nowrap;
+  color: var(--text-secondary);
+}
+
+.chip b { color: var(--text-primary); }
+
+.strategy-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-lg);
+  padding-bottom: 100px;
+}
+
+.strategy-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-md);
+  position: relative;
+  transition: transform 0.2s;
+}
+
+.strategy-card--disabled {
+  opacity: 0.5;
+  filter: grayscale(1);
+}
+
+.strategy-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.strategy-name {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.fee-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.fee-row {
+  font-size: 12px;
+  font-family: var(--f-mono);
+}
+
+.price-display {
+  padding: var(--sp-md) 0;
+}
+
+.price-label {
+  font-size: 12px;
+  color: var(--text-secondary);
+  display: block;
+}
+
+.price-value {
+  font-size: 32px;
+  color: var(--text-primary);
+}
+
+.card--accent .price-label,
+.card--accent .price-value,
+.card--accent .stat-label {
+  color: var(--on-accent-text);
+}
+
+.card--accent .stats-grid {
+  border-top-color: var(--on-accent-divider);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: var(--sp-sm);
+  padding-top: var(--sp-md);
+  border-top: 1px solid var(--divider-dark);
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.stat-label {
+  font-size: 10px;
+  font-family: var(--f-mono);
+  color: var(--text-secondary);
+}
+
+.stat-value {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.competitiveness--up { color: var(--up); }
+.competitiveness--perfect { color: var(--accent); }
+.competitiveness--down { color: var(--down); }
+
+.card--accent .competitiveness--down {
+  color: var(--on-accent-down);
+}
+
+.compare-toggle {
+  text-align: center;
+  padding: var(--sp-xl) 0;
+}
+
+.badge-top {
+  position: absolute;
+  top: -8px;
+  right: var(--sp-md);
+}
+
+.error-msg {
+  font-size: 12px;
+  color: var(--text-secondary);
+  text-align: center;
+  padding: var(--sp-md);
+}

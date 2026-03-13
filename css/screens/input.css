@@ -1,0 +1,127 @@
+/* Screen 1 specific styles */
+
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-xl);
+  padding-top: var(--sp-lg);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-md);
+}
+
+.section__title {
+  font-size: 12px;
+  color: var(--accent);
+}
+
+.range-display {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--sp-lg);
+  padding-bottom: var(--sp-lg);
+  border-bottom: 1px solid var(--divider-dark);
+}
+
+.range-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.range-label {
+  font-size: 10px;
+  color: var(--text-secondary);
+}
+
+.range-value {
+  font-size: 24px;
+}
+
+.range-divider {
+  width: 1px;
+  height: 32px;
+  background-color: var(--divider-dark);
+}
+
+.input-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-md);
+}
+
+.market-input-wrapper {
+  position: relative;
+  display: flex;
+}
+
+.market-input-wrapper .input-field {
+  padding-right: 80px;
+  width: 100%;
+}
+
+.market-search-btn {
+  position: absolute;
+  right: var(--sp-sm);
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(200, 241, 53, 0.15);
+  color: var(--accent);
+  padding: var(--sp-xs) var(--sp-sm);
+  border-radius: var(--r-sm);
+  font-size: 12px;
+}
+
+.input-field:-webkit-autofill + .market-search-btn {
+  color: var(--text-dark);
+  background-color: var(--accent-dim);
+}
+
+.input-field:autofill + .market-search-btn {
+  color: var(--text-dark);
+  background-color: var(--accent-dim);
+
+}
+
+.input-field:-internal-autofill-selected + .market-search-btn {
+  color: var(--text-dark);
+  background-color: var(--accent-dim);
+
+}
+
+.helper-text {
+  font-size: 12px;
+  margin-top: var(--sp-xs);
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 390px;
+  padding: var(--sp-lg) var(--screen-x);
+  background: linear-gradient(to top, var(--bg-dark) 80%, transparent);
+}
+
+.error-toast {
+  position: fixed;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--up);
+  color: var(--text-primary);
+  padding: var(--sp-sm) var(--sp-md);
+  border-radius: var(--r-sm);
+  font-size: 14px;
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+  z-index: 100;
+}

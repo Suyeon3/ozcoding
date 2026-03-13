@@ -1,0 +1,78 @@
+/**
+ * Reusable Comparison Table and Flow Component
+ */
+
+/**
+ * Generates the HTML for the comparison section.
+ * @param {Object} strategies - The strategies object from state.
+ */
+export function renderComparisonHTML(strategies) {
+  const rows = [
+    { name: '최대 수익형', data: strategies.profitMax, sColor: 'val--up' },
+    { name: '거래 성사형', data: strategies.dealCloser, highlight: true, sColor: 'val--accent' },
+    { name: '빠른 판매형', data: strategies.quickSell, sColor: 'val--down' }
+  ];
+
+  const tableRows = rows.map(row => {
+    if (!row.data) return '';
+    return `
+      <tr class="${row.highlight ? 'row--highlight' : ''}">
+        <td>${row.name}</td>
+        <td class="${row.sColor}">${(row.data.sellerFeeRate * 100).toFixed(0)}%</td>
+        <td>${(row.data.buyerFeeRate * 100).toFixed(0)}%</td>
+        <td>${row.data.listPrice.toLocaleString()}</td>
+        <td>${row.data.netPrice.toLocaleString()}</td>
+      </tr>
+    `;
+  }).join('');
+
+  return `
+    <section class="section animate-fade-in">
+      <h2 class="section__title text-mono">전략 비교 표</h2>
+      <div class="table-card card">
+        <table class="compare-table">
+          <thead>
+            <tr class="text-mono">
+              <th>전략</th>
+              <th>판매%</th>
+              <th>구매%</th>
+              <th>판매가</th>
+              <th>정산가</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${tableRows}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section animate-fade-in" style="margin-top: var(--sp-xl)">
+      <h2 class="section__title text-mono">수수료 계산 흐름</h2>
+      <div class="flow-card card">
+        <div class="flow-diagram">
+          <div class="flow-box">
+            <span class="flow-label text-mono">입력값</span>
+            <p>수익 희망 범위</p>
+          </div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-box flow-box--accent">
+            <span class="flow-label text-mono">계산엔진</span>
+            <p>최적율 탐색</p>
+          </div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-box">
+            <span class="flow-label text-mono">추천 세트</span>
+            <p>3가지 전략</p>
+          </div>
+        </div>
+      </div>
+      <ul class="edge-case-list" style="margin-top: var(--sp-md)">
+        <li class="edge-case-item">
+          <span class="edge-icon">⚠️</span>
+          <p>플랫폼 수수료는 총 6%이며, 판매자와 구매자가 분담합니다.</p>
+        </li>
+      </ul>
+    </section>
+  `;
+}

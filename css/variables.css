@@ -1,0 +1,52 @@
+:root {
+  /* Color */
+  --bg-dark: #0f0f0f;
+  --bg-card: #1c1c1c;
+  --bg-card2: #242424;
+  --bg-light: #f7f6f2;
+  --accent: #c8f135;
+  --accent-glow: rgba(200, 241, 53, 0.22);
+  --accent-dim: rgba(27, 67, 50, 0.15);
+    /* On-Accent Tokens (Use these when background is --accent) */
+  --on-accent-text:     #0f0f0f;
+  --on-accent-dim:      rgba(255, 255, 255, 0.68);
+  --on-accent-divider:  rgba(0, 0, 0, 0.15);
+  --on-accent-down:     #008F11;
+
+  --text-primary: #ffffff;
+  --text-secondary: #888888;
+  --text-dark: #0f0f0f;
+  --divider-dark: rgba(255, 255, 255, 0.07);
+  --divider-light: rgba(0, 0, 0, 0.07);
+  --warn: #ffd600;
+  --up: #FF6B6B;
+  --down: #6BFF9E;
+
+  /* Stepper */
+  --stepper-dot-size: 8px;
+  --stepper-line-h: 2px;
+  --stepper-active: var(--accent);
+  --stepper-inactive: var(--bg-card2);
+
+  /* Border Radius */
+  --r-sm: 10px;
+  --r-md: 18px;
+  --r-lg: 26px;
+  --r-xl: 32px;
+  --r-pill: 999px;
+
+  /* Spacing */
+  --sp-xs: 4px;
+  --sp-sm: 8px;
+  --sp-md: 16px;
+  --sp-lg: 24px;
+  --sp-xl: 32px;
+  --screen-x: 20px;
+
+  /* Shadow */
+  --shadow-accent: 0 8px 32px rgba(200, 241, 53, 0.25);
+
+  /* Typography */
+  --f-sans: "Outfit", sans-serif;
+  --f-mono: "DM Mono", monospace;
+}

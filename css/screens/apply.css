@@ -1,0 +1,125 @@
+/* Screen 4 specific styles */
+
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-xl);
+  padding-bottom: 220px;
+}
+
+.hero-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-sm);
+  padding: var(--sp-xl) var(--sp-md);
+  margin-top: var(--sp-md);
+}
+
+.hero-card .strategy-name {
+  font-size: 14px;
+  font-family: var(--f-mono);
+  background-color: var(--text-dark);
+  color: var(--accent);
+  padding: 4px 10px;
+  border-radius: var(--r-pill);
+}
+
+.hero-card .main-val {
+  font-size: 48px;
+  line-height: 1;
+}
+
+.hero-card .sub-val {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-md);
+}
+
+.section__title {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.apply-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-sm);
+}
+
+.apply-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--sp-md);
+  background-color: var(--bg-card);
+  border-radius: var(--r-md);
+  border: 1px solid var(--divider-dark);
+}
+
+.apply-item--highlight {
+  border: 1.5px solid var(--accent);
+  background-color: var(--accent-dim);
+}
+
+.apply-item--dim {
+  background-color: transparent;
+  border-color: transparent;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.apply-item--dim .apply-label,
+.apply-item--dim .apply-value {
+  color: var(--text-secondary);
+}
+
+.apply-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.apply-label {
+  font-size: 10px;
+  color: var(--text-secondary);
+}
+
+.apply-item--highlight .apply-label {
+  color: var(--accent);
+}
+
+.apply-value {
+  font-size: 18px;
+}
+
+.div-line {
+  height: 1px;
+  background-color: var(--divider-dark);
+  margin: var(--sp-sm) 0;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 390px;
+  padding: var(--sp-lg) var(--screen-x);
+  background: var(--bg-dark);
+  border-top: 1px solid var(--divider-dark);
+  text-align: center;
+}
+
+.footer-hint {
+  font-size: 11px;
+  color: var(--text-secondary);
+  margin-top: 16px;
+}
