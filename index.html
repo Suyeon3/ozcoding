@@ -1,77 +1,107 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>C2CPriceHelper - 가격 설정</title>
-  <link rel="stylesheet" href="css/variables.css">
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/components/navigation.css">
-  <link rel="stylesheet" href="css/components/data-display.css">
-  <link rel="stylesheet" href="css/components/forms.css">
-  <link rel="stylesheet" href="css/screens/input.css">
-</head>
-<body>
-  <div id="app">
-    <header class="header container">
-      <div style="width: 24px;"></div>
-      <h1 class="header__title">가격 설정</h1>
-      <button class="header__help">?</button>
-    </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>C2CPriceHelper - 가격 설정</title>
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/components/navigation.css" />
+    <link rel="stylesheet" href="css/components/data-display.css" />
+    <link rel="stylesheet" href="css/components/forms.css" />
+    <link rel="stylesheet" href="css/screens/input.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header class="header container">
+        <div style="width: 24px"></div>
+        <h1 class="header__title">가격 설정</h1>
+        <button class="header__help">?</button>
+      </header>
 
-    <div id="stepper-root"></div>
+      <div id="stepper-root"></div>
 
-    <main class="main container">
-      <section class="section">
-        <h2 class="section__title text-mono">희망 수익가</h2>
-        <div class="range-card card">
-          <div class="range-display">
-            <div class="range-item">
-              <span class="range-label text-mono">MIN</span>
-              <span id="display-min" class="range-value text-bold">0</span>
+      <main class="main container">
+        <section class="section">
+          <h2 class="section__title text-mono">희망 수익가</h2>
+          <div class="range-card card">
+            <div class="range-display">
+              <div class="range-item">
+                <span class="range-label text-mono">MIN</span>
+                <span id="display-min" class="range-value text-bold">0</span>
+              </div>
+              <div class="range-divider"></div>
+              <div class="range-item">
+                <span class="range-label text-mono">MAX</span>
+                <span id="display-max" class="range-value text-bold">0</span>
+              </div>
             </div>
-            <div class="range-divider"></div>
-            <div class="range-item">
-              <span class="range-label text-mono">MAX</span>
-              <span id="display-max" class="range-value text-bold">0</span>
+
+            <div class="input-stack">
+              <div class="input-group">
+                <label class="input-label" for="input-min">최소 수익가</label>
+                <input
+                  type="text"
+                  id="input-min"
+                  class="input-field"
+                  placeholder="0"
+                  inputmode="numeric"
+                />
+              </div>
+              <div class="input-group">
+                <label class="input-label" for="input-max"
+                  >최초/최대 수익가</label
+                >
+                <input
+                  type="text"
+                  id="input-max"
+                  class="input-field"
+                  placeholder="0"
+                  inputmode="numeric"
+                />
+              </div>
             </div>
           </div>
-          
-          <div class="input-stack">
+        </section>
+
+        <section class="section">
+          <h2 class="section__title text-mono">시장 정보</h2>
+          <div class="market-card card">
             <div class="input-group">
-              <label class="input-label" for="input-min">최소 수익가</label>
-              <input type="text" id="input-min" class="input-field" placeholder="0" inputmode="numeric">
-            </div>
-            <div class="input-group">
-              <label class="input-label" for="input-max">최초/최대 수익가</label>
-              <input type="text" id="input-max" class="input-field" placeholder="0" inputmode="numeric">
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section">
-        <h2 class="section__title text-mono">시장 정보</h2>
-        <div class="market-card card">
-          <div class="input-group">
-            <label class="input-label" for="input-market">현재 시장가 (선택)</label>
-            <div class="market-input-wrapper">
-              <input type="text" id="input-market" class="input-field" placeholder="0" inputmode="numeric">
-              <button class="market-search-btn text-mono">🔍 검색</button>
+              <label class="input-label" for="input-market"
+                >현재 시장가 (선택)</label
+              >
+              <div class="market-input-wrapper">
+                <input
+                  type="text"
+                  id="input-market"
+                  class="input-field"
+                  placeholder="0"
+                  inputmode="numeric"
+                />
+                <button class="market-search-btn text-mono">🔍 검색</button>
+              </div>
             </div>
           </div>
-        </div>
-        <p class="helper-text text-secondary">※ 시장가 미입력 시 Deal Closer 전략이 비활성화됩니다.</p>
-      </section>
+          <p class="helper-text text-secondary">
+            ※ 시장가 미입력 시 Deal Closer 전략이 비활성화됩니다.
+          </p>
+        </section>
 
-      <div id="error-toast" class="error-toast"></div>
-    </main>
+        <div id="error-toast" class="error-toast"></div>
+      </main>
 
-    <footer class="footer container">
-      <button id="cta-recommend" class="btn btn--primary" disabled>추천 받기 →</button>
-    </footer>
-  </div>
+      <footer class="footer container">
+        <button id="cta-recommend" class="btn btn--primary" disabled>
+          추천 받기 →
+        </button>
+      </footer>
+    </div>
 
-  <script type="module" src="js/screens/input.js"></script>
-</body>
+    <script type="module" src="js/screens/input.js"></script>
+  </body>
 </html>
+<!-- 어쩌구ㅈ저쩌구 -->
